@@ -1,0 +1,10 @@
+version: '3'
+services:
+  markdown-gravity:
+    build: .
+    container_name: markdown-gravity
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./data:/app/data
+    restart: always

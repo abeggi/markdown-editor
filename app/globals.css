@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fix per l'editor WYSIWYG per farlo sembrare un foglio */
+.tiptap {
+  min-height: 500px;
+  outline: none;
+}
+
+.prose {
+  max-width: none;
+}
