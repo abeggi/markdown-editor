@@ -1,9 +1,6 @@
-# Markdown Gravity
-
-
 # Markdown Gravity 🖋️
 
-Editor Markdown minimale e veloce, ottimizzato per l'esecuzione in homelab su Proxmox/LXC con storage persistente. Supporta la modifica visuale (WYSIWYG) e sorgente, il caricamento di file locali e la gestione (rinomina/eliminazione) dei file sul server.
+Editor Markdown minimale e veloce, supporta la modifica visuale (WYSIWYG) e sorgente, il caricamento di file locali e la gestione (rinomina/eliminazione) dei file sul server.
 
 ## 🛠️ Architettura
 - **Frontend**: Next.js 14, Tiptap Editor, Tailwind CSS.
@@ -18,6 +15,7 @@ Utile per testare modifiche rapide senza buildare l'immagine Docker.
 
 1. **Requisiti**: Node.js 20+ installato.
 2. **Installazione**:
+3. 
 ```bash
 npm install
 ```
@@ -31,9 +29,9 @@ npx next dev
 
 ---
 
-## 🐳 Esecuzione con Docker (Produzione)
+## 🐳 Esecuzione con Docker
 
-Questa è la modalità consigliata per l'uso quotidiano sul tuo server. Evita il "compiling" continuo, ottimizza le risorse e garantisce che l'app sia pronta istantaneamente.
+Questa è la modalità consigliata per l'uso quotidiano. Evita il "compiling" continuo, ottimizza le risorse e garantisce che l'app sia pronta istantaneamente.
 
 ### 1. Build e Avvio
 Dalla root del progetto:
@@ -45,7 +43,6 @@ docker compose up -d --build
 Il servizio è configurato per mantenere i dati persistenti nella cartella locale:
 
 ```yaml
-version: '3'
 services:
   markdown-gravity:
     build: .
@@ -63,13 +60,13 @@ services:
 
 I file Markdown vengono salvati nella cartella `./data`.
 
-- **Permessi (LXC/Proxmox)**: Se riscontri errori di salvataggio nel container, assicurati che la cartella ospite abbia i permessi corretti per l'utente Docker:
+- **Permessi**: Se riscontri errori di salvataggio nel container, assicurati che la cartella ospite abbia i permessi corretti per l'utente Docker:
 
 ```bash
 chmod -R 777 ./data
 ```
 
-- **Backup**: È sufficiente fare il backup della cartella `data/` per mettere al sicuro tutte le note. Il repository GitHub è configurato per ignorare questa cartella tramite `.gitignore`.
+- **Backup**: È sufficiente fare il backup della cartella `data/` per mettere al sicuro tutte le note.
 
 ---
 
