@@ -1,7 +1,7 @@
 services:
   markdown-gravity:
-    build: .
-    container_name: markdown-gravity
+    image: abeggi/markdown-editor:latest
+    container_name: markdown-editor
     ports:
       - "3000:3000"
     volumes:
