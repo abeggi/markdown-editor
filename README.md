@@ -1,20 +1,42 @@
-# Markdown Gravity 🖋️
+# Markdown Gravity
 
-Editor Markdown minimale e veloce, ottimizzato per l'esecuzione in homelab su Proxmox/LXC con storage persistente. Supporta la modifica visuale (WYSIWYG) e sorgente, il caricamento di file locali e la gestione (rinomina/eliminazione) dei file sul server.
+Editor Markdown minimale per homelab.
 
-## 🛠️ Architettura
-- **Frontend**: Next.js 14, Tiptap Editor, Tailwind CSS.
-- **Backend**: Next.js API Routes (filesystem locale).
-- **Storage**: Cartella `./data` (mappata su volume persistente).
+## Esecuzione Locale
 
----
+1. Installazione:
+```bash
+npm install
+```
 
-## 🚀 Esecuzione in Locale (Sviluppo)
+2. Avvio:
+```bash
+npx next dev
+```
 
-Utile per testare modifiche rapide senza buildare l'immagine Docker.
+## Esecuzione Docker
 
-1. **Requisiti**: Node.js 20+ installato.
-2. **Installazione**:
-   ```bash
-   npm install
+```bash
+docker compose up -d --build
+```
 
+## Docker Compose
+
+```yaml
+version: '3'
+services:
+  markdown-gravity:
+    build: .
+    container_name: markdown-gravity
+    ports:
+      - '3000:3000'
+    volumes:
+      - ./data:/app/data
+    restart: always
+```
+
+## Permessi
+
+```bash
+chmod -R 777 ./data
+```
