@@ -21,8 +21,14 @@ npm install
 ```
 
 3. **Avvio**:
+Per lo sviluppo:
 ```bash
 npx next dev
+```
+
+Per la produzione, dopo il build:
+```bash
+npm run start
 ```
 
 4. **Accesso**: L'app sarà disponibile su `http://localhost:3000`.
