@@ -4,6 +4,9 @@ services:
     container_name: markdown-editor
     ports:
       - "3000:3000"
+    environment:
+      - PUID=${UID:-1000}
+      - PGID=${GID:-1000}
     volumes:
       - ./data:/app/data
     restart: always
