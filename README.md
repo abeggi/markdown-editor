@@ -9,7 +9,7 @@ Editor Markdown minimale e veloce, supporta la modifica visuale (WYSIWYG) e sorg
 
 ---
 
-## 🚀 Esecuzione in Locale (Sviluppo)
+## 🚀 Esecuzione in locale (Sviluppo)
 
 Utile per testare modifiche rapide senza buildare l'immagine Docker.
 
